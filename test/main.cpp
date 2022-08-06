@@ -1,165 +1,167 @@
-////okay okay
-#include<GL/gl.h> //comment
-#ifdef __APPLE__
-#include <GLUT/glut.h>
-#else
-#include <GL/glut.h>
-#endif
+#include<cstdio>
+#include <windows.h>  // for MS Windows
+#include <GL/glut.h>  // GLUT, include glu.h and gl.h
+#include<math.h>
+# define PI           3.14159265358979323846
 
-#include <stdlib.h>
+GLfloat position = 0.0f;
+//GLfloat speed = 0.009f;
 
-static int slices = 16;
-static int stacks = 16;
 
-/* GLUT callback Handlers */
+void boat1(){
 
-static void resize(int width, int height)
-{
-    const float ar = (float) width / (float) height;
+    glPushMatrix();
+    glTranslatef(position,0.0f, 0.0f);
 
-    glViewport(0, 0, width, height);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glFrustum(-ar, ar, -1.0, 1.0, 2.0, 100.0);
+    glBegin(GL_QUADS);
+	glColor3ub(184,134,11);
 
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity() ;
+	glVertex2f(0.2f, -0.1f);
+	glVertex2f(0.0f, -0.1f);
+	glVertex2f(-0.05f, 0.0f);
+	glVertex2f(0.25f, 0.0f);
+	glEnd();
+
+    glBegin(GL_LINES);
+	glColor3ub(139, 69 ,19);
+	glVertex2f(0.1f, 0.0f);
+	glVertex2f(0.1f, 0.2f);
+
+	glEnd();
+
+    glBegin(GL_LINES);
+	glColor3ub(139 ,69 ,19);
+	glVertex2f(0.0f, 0.0f);
+	glVertex2f(0.1f, 0.2f);
+
+	glEnd();
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(205,92,92);
+
+	glVertex2f(0.1f,  0.2f);
+	glVertex2f(0.2f, 0.04f);
+	glVertex2f(0.1f, 0.04f);
+
+	glEnd();
+glPopMatrix();
+
+
+
+   glFlush();
+
 }
 
-static void display(void)
-{
-    const double t = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
-    const double a = t*90.0;
+GLfloat position1 = 0.0f;
+//GLfloat speed = 0.1f;
 
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glColor3d(1,0,0);
 
+
+void boat2(){
     glPushMatrix();
-        glTranslated(-2.4,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidSphere(1,slices,stacks);
-    glPopMatrix();
+    glTranslatef(position1,0.0f, 0.0f);
 
-    glPushMatrix();
-        glTranslated(0,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidCone(1,1,slices,stacks);
-    glPopMatrix();
+    glBegin(GL_QUADS);
+	glColor3ub(178, 34, 34);
 
-    glPushMatrix();
-        glTranslated(2.4,1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutSolidTorus(0.2,0.8,slices,stacks);
-    glPopMatrix();
+	glVertex2f(0.15f, 0.15f);
+	glVertex2f(0.45f, 0.15f);
+	glVertex2f(0.4f, 0.05f);
+	glVertex2f(0.2f, 0.05f);
 
-    glPushMatrix();
-        glTranslated(-2.4,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireSphere(1,slices,stacks);
-    glPopMatrix();
+	glEnd();
 
-    glPushMatrix();
-        glTranslated(0,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireCone(1,1,slices,stacks);
-    glPopMatrix();
+    glBegin(GL_LINES);
+	glColor3ub(139, 69 ,19);
+	glVertex2f(0.3f, 0.15f);
+	glVertex2f(0.3f, 0.35f);
 
-    glPushMatrix();
-        glTranslated(2.4,-1.2,-6);
-        glRotated(60,1,0,0);
-        glRotated(a,0,0,1);
-        glutWireTorus(0.2,0.8,slices,stacks);
-    glPopMatrix();
+	glEnd();
 
-    glutSwapBuffers();
+    glBegin(GL_LINES);
+	glColor3ub(139 ,69 ,19);
+	glVertex2f(0.3f, 0.35f);
+	glVertex2f(0.15f, 0.15f);
+
+	glEnd();
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(205,92,92);
+
+	glVertex2f(0.3f, 0.35f);
+	glVertex2f(0.45f, 0.2f);
+	glVertex2f(0.3f, 0.2f);
+
+	glEnd();
+
+	glPopMatrix();
+
+
+
+   glFlush();
+
 }
 
 
-static void key(unsigned char key, int x, int y)
-{
-    switch (key)
-    {
-        case 27 :
-        case 'q':
-            exit(0);
-            break;
 
-        case '+':
-            slices++;
-            stacks++;
-            break;
+//---------calling function-----------
 
-        case '-':
-            if (slices>3 && stacks>3)
-            {
-                slices--;
-                stacks--;
-            }
-            break;
-    }
+void day() {
+	glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // Set background color to black and opaque
+	glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer (background)
 
-    glutPostRedisplay();
+    //fornt();
+
+
+
+    //sun
+    glColor3ub(245, 176, 65);
+	int j;
+	GLfloat x=-0.8f; GLfloat y=0.9f; GLfloat radius =.1f;
+	int triangleAmount = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+		glVertex2f(x, y); // center of circle
+		for(j = 0; j <= triangleAmount+1;j++) {
+			glVertex2f(
+		            x + (radius * cos(j *  twicePi / triangleAmount)),
+			    y + (radius * sin(j * twicePi / triangleAmount))
+			);
+			glColor3ub(245, 249, 10);
+		}
+	glEnd();
+
+
+    boat1();
+    boat2();
+
+
+	glFlush();  // Render now
 }
 
-static void idle(void)
-{
-    glutPostRedisplay();
-}
 
-const GLfloat light_ambient[]  = { 0.0f, 0.0f, 0.0f, 1.0f };
-const GLfloat light_diffuse[]  = { 1.0f, 1.0f, 1.0f, 1.0f };
-const GLfloat light_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
-const GLfloat light_position[] = { 2.0f, 5.0f, 5.0f, 0.0f };
 
-const GLfloat mat_ambient[]    = { 0.7f, 0.7f, 0.7f, 1.0f };
-const GLfloat mat_diffuse[]    = { 0.8f, 0.8f, 0.8f, 1.0f };
-const GLfloat mat_specular[]   = { 1.0f, 1.0f, 1.0f, 1.0f };
-const GLfloat high_shininess[] = { 100.0f };
 
-/* Program entry point */
 
-int main(int argc, char *argv[])
-{
-    glutInit(&argc, argv);
-    glutInitWindowSize(640,480);
-    glutInitWindowPosition(10,10);
-    glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 
-    glutCreateWindow("GLUT Shapes");
 
-    glutReshapeFunc(resize);
-    glutDisplayFunc(display);
-    glutKeyboardFunc(key);
-    glutIdleFunc(idle);
+/* Main function: GLUT runs as a console application starting at main()  */
+int main(int argc, char** argv) {
+	glutInit(&argc, argv);
+	glutInitWindowSize(900,600); // Set the window's initial width & height
+	glutInitWindowPosition(50, 50);
 
-    glClearColor(1,1,1,1);
-    glEnable(GL_CULL_FACE);
-    glCullFace(GL_BACK);
+glutCreateWindow("Day:d , Evening:e ,Night:n ,RainyDay:r ,Start:s ,Stop:a");
+	glutDisplayFunc(day);
 
-    glEnable(GL_DEPTH_TEST);
-    glDepthFunc(GL_LESS);
 
-    glEnable(GL_LIGHT0);
-    glEnable(GL_NORMALIZE);
-    glEnable(GL_COLOR_MATERIAL);
-    glEnable(GL_LIGHTING);
 
-    glLightfv(GL_LIGHT0, GL_AMBIENT,  light_ambient);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE,  light_diffuse);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
-    glLightfv(GL_LIGHT0, GL_POSITION, light_position);
 
-    glMaterialfv(GL_FRONT, GL_AMBIENT,   mat_ambient);
-    glMaterialfv(GL_FRONT, GL_DIFFUSE,   mat_diffuse);
-    glMaterialfv(GL_FRONT, GL_SPECULAR,  mat_specular);
-    glMaterialfv(GL_FRONT, GL_SHININESS, high_shininess);
 
-    glutMainLoop();
+	glutMainLoop();
+	return 0;
 
-    return EXIT_SUCCESS;
 }
