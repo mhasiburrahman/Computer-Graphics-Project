@@ -6,7 +6,7 @@
 ### Tools We Have Used:
 
 
-- CodeBlocks v17.12
+- Code::Blocks 17.12
 - Glut.h
 - Notepad++
 
