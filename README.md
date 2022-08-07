@@ -4,7 +4,7 @@
 
 
 
-### Tools We Have Used:
+### Tools used:
 
 
 - Code::Blocks 17.12
