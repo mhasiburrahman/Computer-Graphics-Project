@@ -1,5 +1,5 @@
 # Project title: Sea Beach Scenary
-## Course: Computer Graphics
+## Course: Computer Graphics [I]
 
 
 
@@ -8,7 +8,7 @@
 
 
 - Code::Blocks 17.12
-- Glut.h
+- OpenGL
 - Notepad++
 
 
