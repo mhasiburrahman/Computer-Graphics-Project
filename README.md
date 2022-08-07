@@ -1,4 +1,5 @@
-# Sea Beach Scenary
+# Project title: Sea Beach Scenary
+## Course: Computer Graphics
 
 
 
