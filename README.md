@@ -1,6 +1,6 @@
 # Sea Beach Scenary
 
-![Project Image](project-image-url)
+![Project Image](file:///C:/Users/prott/OneDrive%20-%20American%20International%20University-Bangladesh/Desktop/Capture.PNG)
 
 
 ### Tools We Have Used:
