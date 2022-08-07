@@ -3,9 +3,52 @@
 #include <GL/glut.h>  // GLUT, include glu.h and gl.h
 #include<math.h>
 # define PI           3.14159265358979323846
+void daySky(){
+    //GL_QUADS
+    glBegin(GL_QUADS);
+        glColor3ub(84, 153, 199); //up left corner
+    glVertex2f(-1.1f, 1.0f);
+        glColor3ub(127, 179, 213); //up right corner
+	glVertex2f(1.1f, 1.0f);
+        glColor3ub(251, 252, 252); //color mixing
+	glVertex2f(1.1f, -0.1f);
+        glColor3ub(251, 252, 252); //color mixing
+	glVertex2f(-1.1f, -0.4f);
 
+	glEnd();
+}
+void dayBeach(){
+	//GL_QUADS
+    glBegin(GL_QUADS);
+        glColor3ub(244, 236, 252);
+    glVertex2f(-1.0f, -0.3f); //top left
+        glColor3ub(214, 234, 248);
+    glVertex2f(1.0f, -0.08f); //top right
+        glColor3ub(246, 221, 204);
+	glVertex2f(1.0f, -1.0f); //down right
+        glColor3ub(246, 221, 204);
+	glVertex2f(-1.0f, -1.0f); //down left
+
+	glEnd();
+}
 GLfloat positionCloud1 = 0.4f;
 GLfloat speed = 0.009f; //declared globally for every movable object... ... ...SPEED... ... ...!!! !!! !!!
+
+
+void eveningSky(){
+    //GL_QUADS
+    glBegin(GL_QUADS);
+    glColor4f(0.8f, 0.7f, 0.5f, 1.0f);
+    glVertex2f(-1.1f, 1.0f);
+        glColor3ub(235, 222, 240); //color mixing
+	glVertex2f(1.1f, 1.0f);
+        glColor3ub(250, 215, 160); //color mixing
+	glVertex2f(1.1f, -0.1f);
+        glColor3ub(215, 189, 226); //color mixing
+	glVertex2f(-1.1f, -0.4f);
+	glEnd();
+}
+
 
 void updateCloud1(int value) {
 
@@ -380,14 +423,14 @@ void boat2(){
 
 
 
-//---------calling function-----------
 
+//---------calling function-----------
 void day() {
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // Set background color to black and opaque
 	glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer (background)
 
     //fornt();
-
+    daySky();
 
 
     //sun
@@ -409,15 +452,17 @@ void day() {
 			glColor3ub(245, 249, 10);
 		}
 	glEnd();
+
     cloud1();
     cloud2();
 
+    dayBeach();
     boat1();
     boat2();
 
-
 	glFlush();  // Render now
 }
+
 
 
 
@@ -433,6 +478,9 @@ int main(int argc, char** argv) {
 
 glutCreateWindow("Day:d , Evening:e ,Night:n ,RainyDay:r ,Start:s ,Stop:a");
 	glutDisplayFunc(day);
+
+
+
 
 
 
