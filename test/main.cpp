@@ -4,6 +4,282 @@
 #include<math.h>
 # define PI           3.14159265358979323846
 
+GLfloat positionCloud1 = 0.4f;
+GLfloat speed = 0.009f; //declared globally for every movable object... ... ...SPEED... ... ...!!! !!! !!!
+
+void updateCloud1(int value) {
+
+    if(positionCloud1 <-1.0)
+        positionCloud1 = 1.0f;
+
+    positionCloud1 -= speed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, updateCloud1, 0);
+}
+void cloud1(){
+
+    glPushMatrix();
+    glTranslatef(-positionCloud1,0.0f,0.0f);
+
+
+    //circle-1
+	int jeight;
+	GLfloat p8=.34f; GLfloat q8=.8f; GLfloat radius8 =.08f;
+	int triangleAmount8 = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi8 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+        glColor3ub(253, 254, 254);
+		glVertex2f(p8, q8); // center of circle
+		for(jeight = 0; jeight <= triangleAmount8; jeight++) {
+			glVertex2f(
+		            p8 + (radius8 * cos(jeight *  twicePi8 / triangleAmount8)),
+			    q8 + (radius8 * sin(jeight * twicePi8 / triangleAmount8))
+			);
+		}
+	glEnd();
+
+	//circle-2
+	int jnine;
+
+	GLfloat p9=.41f; GLfloat q9=.87f; GLfloat radius9 =.07f;
+	int triangleAmount9 = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi9 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+        glColor3ub(253, 254, 254);
+		glVertex2f(p9, q9); // center of circle
+		for(jnine = 0; jnine <= triangleAmount9; jnine++) {
+			glVertex2f(
+		            p9 + (radius9 * cos(jnine *  twicePi9 / triangleAmount9)),
+			    q9 + (radius9 * sin(jnine * twicePi9 / triangleAmount9))
+			);
+		}
+	glEnd();
+
+	//circle-3
+	int jten;
+
+	GLfloat p10=.30f; GLfloat q10=.87f; GLfloat radius10 =.08f;
+	int triangleAmount10 = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi10 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+        glColor3ub(253, 254, 254);
+		glVertex2f(p10, q10); // center of circle
+		for(jten = 0; jten <= triangleAmount10; jten++) {
+			glVertex2f(
+		            p10 + (radius10 * cos(jten *  twicePi10 / triangleAmount10)),
+			    q10 + (radius10* sin(jten * twicePi10 / triangleAmount10))
+			);
+		}
+	glEnd();
+
+	//circle-4
+	int jeleven;
+
+	GLfloat p11=.45f; GLfloat q11=.8f; GLfloat radius11 =.08f;
+	int triangleAmount11 = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi11 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+        glColor3ub(253, 254, 254);
+		glVertex2f(p11, q11); // center of circle
+		for(jeleven = 0; jeleven <= triangleAmount11; jeleven++) {
+			glVertex2f(
+		            p11 + (radius11 * cos(jeleven *  twicePi11 / triangleAmount11)),
+			    q11 + (radius11* sin(jeleven * twicePi11 / triangleAmount11))
+			);
+		}
+	glEnd();
+
+	glPopMatrix();
+
+	glFlush();
+}
+
+
+GLfloat positionCloud2 = 0.5f;
+//GLfloat speed = 0.1f;
+
+void updateCloud2(int value) {
+
+    if(positionCloud2 <-1.5)
+        positionCloud2 = 1.0f;
+
+    positionCloud2 -= speed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, updateCloud2, 0);
+}
+
+void cloud2(){
+
+    glPushMatrix();
+    glTranslatef(-positionCloud2, 0.0f, 0.0f);
+
+    //circle-1
+	int j;
+
+	GLfloat p=-.5f; GLfloat q=.77f; GLfloat radius1 =.09f;
+	int triangleAmount1 = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi1 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+        glColor3ub(253, 254, 254);
+		glVertex2f(p, q); // center of circle
+		for(j = 0; j <= triangleAmount1;j++) {
+			glVertex2f(
+		            p + (radius1 * cos(j *  twicePi1 / triangleAmount1)),
+			    q + (radius1 * sin(j * twicePi1 / triangleAmount1))
+			);
+		}
+	glEnd();
+
+	//circle-2
+	int jj;
+
+	GLfloat p2=-.4f; GLfloat q2=.77f; GLfloat radius2 =.09f;
+	int triangleAmount2 = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi2 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+        glColor3ub(253, 254, 254);
+		glVertex2f(p2, q2); // center of circle
+		for(jj = 0; jj <= triangleAmount1;jj++) {
+			glVertex2f(
+		            p2 + (radius2 * cos(jj *  twicePi2 / triangleAmount2)),
+			    q2 + (radius2 * sin(jj * twicePi2 / triangleAmount2))
+			);
+		}
+	glEnd();
+
+
+
+
+	//circle-3
+	int jjj;
+
+	GLfloat p3=-.3f; GLfloat q3=.77f; GLfloat radius3 =.09f;
+	int triangleAmount3 = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi3 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+        glColor3ub(253, 254, 254);
+		glVertex2f(p3, q3); // center of circle
+		for(jjj = 0; jjj <= triangleAmount1;jjj++) {
+			glVertex2f(
+		            p3 + (radius3 * cos(jjj *  twicePi3 / triangleAmount3)),
+			    q3 + (radius3 * sin(jjj * twicePi3 / triangleAmount3))
+			);
+		}
+	glEnd();
+
+
+
+	//circle-4
+	int jfour;
+
+	GLfloat p4=-.2f; GLfloat q4=.77f; GLfloat radius4 =.09f;
+	int triangleAmount4 = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi4 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+        glColor3ub(253, 254, 254);
+		glVertex2f(p4, q4); // center of circle
+		for(jfour = 0; jfour <= triangleAmount4;jfour++) {
+			glVertex2f(
+		            p4 + (radius4 * cos(jfour *  twicePi4 / triangleAmount4)),
+			    q4 + (radius4 * sin(jfour * twicePi4 / triangleAmount4))
+			);
+		}
+	glEnd();
+
+	//circle-5
+	int jfive;
+
+	GLfloat p5=-.25f; GLfloat q5=.82f; GLfloat radius5 =.09f;
+	int triangleAmount5 = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi5 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+        glColor3ub(253, 254, 254);
+		glVertex2f(p5, q5); // center of circle
+		for(jfive = 0; jfive <= triangleAmount5; jfive++) {
+			glVertex2f(
+		            p5 + (radius5 * cos(jfive *  twicePi5 / triangleAmount5)),
+			    q5 + (radius5 * sin(jfive * twicePi5 / triangleAmount5))
+			);
+		}
+	glEnd();
+
+	//circle-6
+	int jsix;
+
+	GLfloat p6=-.35f; GLfloat q6=.86f; GLfloat radius6 =.09f;
+	int triangleAmount6 = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi6 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+        glColor3ub(253, 254, 254);
+		glVertex2f(p6, q6); // center of circle
+		for(jsix = 0; jsix <= triangleAmount6; jsix++) {
+			glVertex2f(
+		            p6 + (radius6 * cos(jsix *  twicePi6 / triangleAmount6)),
+			    q6 + (radius6 * sin(jsix * twicePi6 / triangleAmount6))
+			);
+		}
+	glEnd();
+
+	//circle-7
+	int jsvn;
+
+	GLfloat p7=-.45f; GLfloat q7=.82f; GLfloat radius7 =.09f;
+	int triangleAmount7 = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi7 = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+        glColor3ub(253, 254, 254);
+		glVertex2f(p7, q7); // center of circle
+		for(jsvn = 0; jsvn <= triangleAmount7; jsvn++) {
+			glVertex2f(
+		            p7 + (radius6 * cos(jsvn *  twicePi7 / triangleAmount7)),
+			    q7 + (radius6 * sin(jsvn * twicePi7 / triangleAmount7))
+			);
+		}
+	glEnd();
+
+	glPopMatrix();
+
+	glFlush();
+}
 GLfloat position = 0.0f;
 //GLfloat speed = 0.009f;
 
@@ -133,7 +409,8 @@ void day() {
 			glColor3ub(245, 249, 10);
 		}
 	glEnd();
-
+    cloud1();
+    cloud2();
 
     boat1();
     boat2();
@@ -159,7 +436,8 @@ glutCreateWindow("Day:d , Evening:e ,Night:n ,RainyDay:r ,Start:s ,Stop:a");
 
 
 
-
+    glutTimerFunc(100, updateCloud1, 0);
+    glutTimerFunc(100, updateCloud2, 0);
 
 	glutMainLoop();
 	return 0;
