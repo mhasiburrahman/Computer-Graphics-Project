@@ -1,6 +1,7 @@
 # Sea Beach Scenary
 
-![Project Image!]([file:///C:/Users/prott/OneDrive%20-%20American%20International%20University-Bangladesh/Desktop/Capture.PNG](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png))
+![Project Image!]![Capture](https://user-images.githubusercontent.com/94465005/183309389-0d5c3ed9-4b48-4769-a864-71ae0d2b6fd7.PNG)
+
 
 
 ### Tools We Have Used:
