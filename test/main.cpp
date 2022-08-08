@@ -20,6 +20,39 @@ void dayRiver(){
 }
 
 
+//night River
+void nightRiver(){
+    //GL_QUADS
+    glBegin(GL_QUADS);
+	glColor3ub(21, 67, 96);
+
+    glVertex2f(-1.0f, -0.4f);
+	glVertex2f(-1.0f, 0.2f);
+	glVertex2f(1.0f, 0.2f);
+    glColor3ub(133, 193, 233);
+	glVertex2f(1.0f, -0.15f);
+
+	glEnd();
+}
+
+//night beach
+
+void nightBeach(){
+	//GL_QUADS
+    glBegin(GL_QUADS);
+        glColor3ub(234, 237, 237);
+    glVertex2f(-1.0f, -0.4f); //top left
+        glColor3ub(234, 237, 237);
+    glVertex2f(1.0f, -0.1f); //top right
+        glColor3ub(171, 178, 185);
+	glVertex2f(1.0f, -1.0f); //down right
+        glColor3ub(171, 178, 185);
+	glVertex2f(-1.0f, -1.0f); //down left
+
+	glEnd();
+}
+
+
 
 void daySky(){
     //GL_QUADS
