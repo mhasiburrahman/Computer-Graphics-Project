@@ -5,6 +5,7 @@
 #include "models/Plane.h"
 
 #define PI 3.14159265358979323846
+Plane plane;
 
 //----dayRiver----
 void dayRiver()
@@ -663,6 +664,19 @@ void chair()
 	glEnd();
 }
 
+// Plane Utils
+void updatePlanePosition(int value)
+{
+
+	if (plane.getPlanePosition() > 1.4)
+		plane.setPlanePosition(-1.0f);
+
+	plane.setPlanePosition(plane.getPlanePosition() + plane.getPlaneSpeed());
+
+	glutPostRedisplay();
+
+	glutTimerFunc(100, updatePlanePosition, 0);
+}
 //---------calling function-----------
 void day()
 {
@@ -693,7 +707,7 @@ void day()
 		glColor3ub(245, 249, 10);
 	}
 	glEnd();
-	Plane plane;
+	plane.drawPlane();
 	cloud1();
 	cloud2();
 	dayRiver();
@@ -738,13 +752,13 @@ int main(int argc, char **argv)
 	glutInitWindowSize(900, 600); // Set the window's initial width & height
 	glutInitWindowPosition(50, 50);
 
-	glutCreateWindow("Day:d , Evening:e ,Night:n ,RainyDay:r ,Start:s ,Stop:a");
+	glutCreateWindow("Beach Senario ");
 	glutDisplayFunc(day);
 	init();
 	glutKeyboardFunc(handleKeypress);
 	glutTimerFunc(100, update, 0);
 	glutTimerFunc(100, update1, 0);
-	// glutTimerFunc(100, update2, 0);
+	glutTimerFunc(100, updatePlanePosition, 0);
 
 	glutTimerFunc(100, updateCloud1, 0);
 	glutTimerFunc(100, updateCloud2, 0);

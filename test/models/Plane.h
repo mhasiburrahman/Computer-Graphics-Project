@@ -6,48 +6,6 @@ private:
     GLfloat planePosition = -0.7f;
     GLfloat planeSpeed = 0.015f;
 
-public:
-    Plane()
-    {
-        this->drawPlane();
-    }
-
-    GLfloat getPlanePosition()
-    {
-        return this->planePosition;
-    }
-
-    void setPlanePosition(GLfloat planePosition)
-    {
-        this->planePosition = planePosition;
-    }
-
-    GLfloat getPlaneSpeed()
-    {
-        return this->planeSpeed;
-    }
-
-    void setPlaneSpeed(GLfloat planeSpeed)
-    {
-        this->planeSpeed = planeSpeed;
-    }
-
-    void drawPlane()
-    {
-        glPushMatrix();
-        glTranslatef(getPlanePosition(), 0.0f, 0.0f);
-
-        this->drawPlaneStructure();
-        this->drawBackStand();
-        this->drawBackRudder();
-        this->drawRightWing();
-        this->drawLeftWing();
-        this->drawAllWindows();
-
-        glPopMatrix();
-        glFlush();
-    }
-
     void drawPlaneStructure()
     {
         glBegin(GL_POLYGON);
@@ -382,5 +340,42 @@ public:
         glVertex2f(0.295f, 0.69f);
         glVertex2f(0.309f, 0.693f);
         glEnd();
+    }
+
+public:
+    GLfloat getPlanePosition()
+    {
+        return this->planePosition;
+    }
+
+    void setPlanePosition(GLfloat planePosition)
+    {
+        this->planePosition = planePosition;
+    }
+
+    GLfloat getPlaneSpeed()
+    {
+        return this->planeSpeed;
+    }
+
+    void setPlaneSpeed(GLfloat planeSpeed)
+    {
+        this->planeSpeed = planeSpeed;
+    }
+
+    void drawPlane()
+    {
+        glPushMatrix();
+        glTranslatef(getPlanePosition(), 0.0f, 0.0f);
+
+        this->drawPlaneStructure();
+        this->drawBackStand();
+        this->drawBackRudder();
+        this->drawRightWing();
+        this->drawLeftWing();
+        this->drawAllWindows();
+
+        glPopMatrix();
+        glFlush();
     }
 };
