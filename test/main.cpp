@@ -81,6 +81,9 @@ void eveningBeach(){
 	glEnd();
 }
 
+
+
+
 void daySky(){
     //GL_QUADS
     glBegin(GL_QUADS);
@@ -229,6 +232,39 @@ void cloud1(){
 
 	glFlush();
 }
+
+
+
+//Adding moon
+
+    glColor3ub(255, 255 ,255);
+	int j;
+	GLfloat x=0.8f; GLfloat y=0.9f; GLfloat radius =.1f;
+	int triangleAmount = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+		glVertex2f(x, y); // center of circle
+		for(j = 0; j <= triangleAmount+1;j++) {
+			glVertex2f(
+		            x + (radius * cos(j *  twicePi / triangleAmount)),
+			    y + (radius * sin(j * twicePi / triangleAmount))
+			);
+			glColor3ub(215, 219, 221);
+		}
+	glEnd();
+
+	//----------
+    chair();
+    Bigtree();
+
+   glFlush();
+}
+
+
+
 
 
 GLfloat positionCloud2 = 0.5f;
