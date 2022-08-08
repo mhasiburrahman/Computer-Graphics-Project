@@ -4,6 +4,18 @@
 
 
 
+## Instruction to run 
+
+#### Macos
+
+```bash
+    chmod +x Build.sh
+```
+
+```bash
+    ./Build.sh
+```
+
 ### Tools used:
 
 
