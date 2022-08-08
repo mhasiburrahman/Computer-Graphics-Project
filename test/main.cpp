@@ -692,6 +692,30 @@ void day() {
 }
 
 
+void handleKeypress(unsigned char key, int x, int y) {
+	switch (key) {
+//----------------multiple view------------
+    case 'd':
+   glutDisplayFunc(day);
+
+   glutPostRedisplay();
+
+    break;
+
+//-----speed control----
+
+    case 'a'://--------stop----------
+    speed = 0.0f;
+
+    break;
+    case 's'://--------start-------------
+    speed = 0.01f;
+
+    break;
+    glutPostRedisplay();
+	}
+
+}
 
 
 
@@ -704,9 +728,10 @@ int main(int argc, char** argv) {
 	glutInitWindowSize(900,600); // Set the window's initial width & height
 	glutInitWindowPosition(50, 50);
 
-glutCreateWindow("Day:d , Evening:e ,Night:n ,RainyDay:r ,Start:s ,Stop:a");
+    glutCreateWindow("Day:d , Evening:e ,Night:n ,RainyDay:r ,Start:s ,Stop:a");
 	glutDisplayFunc(day);
-
+    init();
+    glutKeyboardFunc(handleKeypress);
     glutTimerFunc(100, update, 0);
     glutTimerFunc(100, update1, 0);
     //glutTimerFunc(100, update2, 0);
