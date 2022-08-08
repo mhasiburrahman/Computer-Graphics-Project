@@ -42,7 +42,7 @@ public:
         this->drawBackRudder();
         this->drawRightWing();
         this->drawLeftWing();
-        this->sideWindowsLeftToRight();
+        this->drawAllWindows();
 
         glPopMatrix();
         glFlush();
@@ -203,6 +203,22 @@ public:
         glEnd();
     }
 
+    void drawAllWindows()
+    {
+        this->sideWindow1();
+        this->sideWindow2();
+        this->sideWindow3();
+        this->sideWindow4();
+        this->sideWindow5();
+        this->sideWindow6();
+        this->sideWindow7();
+        this->sideWindow8();
+        this->sideWindow9();
+        this->sideWindow10();
+        this->sideWindow11();
+        this->sideWindow12();
+    }
+
     void sideWindow1()
     {
         glBegin(GL_QUADS);
@@ -212,6 +228,159 @@ public:
         glColor3ub(194, 194, 163);
         glVertex2f(0.02f, 0.66f);
         glVertex2f(0.03f, 0.66f);
+        glEnd();
+    }
+
+    void sideWindow2()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(173, 173, 133);
+        glVertex2f(0.05f, 0.68f);
+        glVertex2f(0.04f, 0.68f);
+        glColor3ub(194, 194, 163);
+        glVertex2f(0.04f, 0.66f);
+        glVertex2f(0.05f, 0.66f);
+        glEnd();
+    }
+
+    void sideWindow3()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(173, 173, 133);
+        glVertex2f(0.07f, 0.68f);
+        glVertex2f(0.06f, 0.68f);
+        glColor3ub(194, 194, 163);
+        glVertex2f(0.06f, 0.66f);
+        glVertex2f(0.07f, 0.66f);
+        glEnd();
+    }
+
+    void sideWindow4()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(173, 173, 133);
+        glVertex2f(0.09f, 0.68f);
+        glVertex2f(0.08f, 0.68f);
+        glColor3ub(194, 194, 163);
+        glVertex2f(0.08f, 0.66f);
+        glVertex2f(0.09f, 0.66f);
+        glEnd();
+    }
+
+    void sideWindow5()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(173, 173, 133);
+        glVertex2f(0.11f, 0.68f);
+        glVertex2f(0.10f, 0.68f);
+        glColor3ub(194, 194, 163);
+        glVertex2f(0.10f, 0.66f);
+        glVertex2f(0.11f, 0.66f);
+        glEnd();
+    }
+
+    void sideWindow6()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(173, 173, 133);
+        glVertex2f(0.13f, 0.68f);
+        glVertex2f(0.12f, 0.68f);
+        glColor3ub(194, 194, 163);
+        glVertex2f(0.12f, 0.66f);
+        glVertex2f(0.13f, 0.66f);
+        glEnd();
+    }
+
+    void sideWindow7()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(173, 173, 133);
+        glVertex2f(0.15f, 0.68f);
+        glVertex2f(0.14f, 0.68f);
+        glColor3ub(194, 194, 163);
+        glVertex2f(0.14f, 0.66f);
+        glVertex2f(0.15f, 0.66f);
+        glEnd();
+    }
+
+    void sideWindow8()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(173, 173, 133);
+        glVertex2f(0.17f, 0.68f);
+        glVertex2f(0.16f, 0.68f);
+        glColor3ub(194, 194, 163);
+        glVertex2f(0.16f, 0.66f);
+        glVertex2f(0.17f, 0.66f);
+        glEnd();
+    }
+
+    void sideWindow9()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(173, 173, 133);
+        glVertex2f(0.19f, 0.68f);
+        glVertex2f(0.18f, 0.68f);
+        glColor3ub(194, 194, 163);
+        glVertex2f(0.18f, 0.66f);
+        glVertex2f(0.19f, 0.66f);
+        glEnd();
+    }
+
+    void sideWindow10()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(173, 173, 133);
+        glVertex2f(0.21f, 0.68f);
+        glVertex2f(0.20f, 0.68f);
+        glColor3ub(194, 194, 163);
+        glVertex2f(0.20f, 0.66f);
+        glVertex2f(0.21f, 0.66f);
+        glEnd();
+    }
+
+    void sideWindow11()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(173, 173, 133);
+        glVertex2f(0.23f, 0.68f);
+        glVertex2f(0.22f, 0.68f);
+        glColor3ub(194, 194, 163);
+        glVertex2f(0.22f, 0.66f);
+        glVertex2f(0.23f, 0.66f);
+        glEnd();
+    }
+
+    void sideWindow12()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(173, 173, 133);
+        glVertex2f(0.25f, 0.68f);
+        glVertex2f(0.24f, 0.68f);
+        glColor3ub(194, 194, 163);
+        glVertex2f(0.24f, 0.66f);
+        glVertex2f(0.25f, 0.66f);
+        glEnd();
+    }
+
+    void drawFrontWindow()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(173, 173, 133);
+        glVertex2f(0.34f, 0.68f);
+        glVertex2f(0.33f, 0.67f);
+        glColor3ub(194, 194, 163);
+        glVertex2f(0.31f, 0.694f);
+        glVertex2f(0.32f, 0.705f);
+        glEnd();
+
+        glBegin(GL_QUADS);
+        glColor3ub(173, 173, 133);
+        glVertex2f(0.327f, 0.670f);
+        glVertex2f(0.31f, 0.662f);
+        glColor3ub(194, 194, 163);
+        glVertex2f(0.295f, 0.69f);
+        glVertex2f(0.309f, 0.693f);
         glEnd();
     }
 };
