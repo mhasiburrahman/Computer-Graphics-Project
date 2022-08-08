@@ -556,6 +556,98 @@ void Bigtree(){
 
 	glEnd();
 }
+void init() {
+   glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+}
+
+void chair(){
+
+    //Chair Umbrella
+    glBegin(GL_TRIANGLES);
+        glColor3ub(188 ,143 ,143);
+	glVertex2f(1.0f,  -0.2f);
+	glVertex2f(0.4f, -0.2);
+	glVertex2f(0.7f, 0.1f);
+	glEnd();
+
+    //Chair Umbrella Stand
+    glBegin(GL_QUADS);
+        glColor3ub(139, 69, 19);
+	glVertex2f(0.715f, -0.7f);
+	glVertex2f(0.685f, -0.7f);
+	glVertex2f(0.685f, -0.2f);
+	glVertex2f(0.715f, -0.2f);
+	glEnd();
+
+
+	//----------------chair------------
+	//sit
+    glBegin(GL_QUADS);
+        glColor3ub(205 ,186 ,150);
+	glVertex2f(0.65f, -0.5f);
+	glVertex2f(0.4f, -0.5f);
+	glVertex2f(0.35f, -0.55f);
+	glVertex2f(0.6f, -0.55f);
+	glEnd();
+	//sit left label
+    glBegin(GL_QUADS);
+        glColor3ub(118, 215, 196);
+	glVertex2f(0.6f, -0.58f);
+	glVertex2f(0.6f, -0.55f);
+	glVertex2f(0.35f, -0.55f);
+	glVertex2f(0.35f, -0.58);
+	glEnd();
+	//sit back label
+    glBegin(GL_QUADS);
+        glColor3ub(118, 215, 196);
+	glVertex2f(0.65f, -0.50f);
+	glVertex2f(0.65f, -0.53f);
+	glVertex2f(0.6f, -0.58f);
+	glVertex2f(0.6f, -0.55f);
+	glEnd();
+	//chair relaxer
+    glBegin(GL_QUADS);
+        glColor3ub(118, 215, 196);
+	glVertex2f(0.65f, -0.53f);
+	glVertex2f(0.6f, -0.58f);
+	glVertex2f(0.63f, -0.48);
+    glVertex2f(0.68f, -0.44);
+	glEnd();
+
+    //chair legs - left front
+     glBegin(GL_QUADS);
+        glColor3ub(118, 215, 196);
+	glVertex2f(0.35f, -0.58);
+	glVertex2f(0.37f, -0.58f);
+	glVertex2f(0.37f, -0.65f);
+	glVertex2f(0.35f, -0.65);
+	glEnd();
+	//chair legs - right front
+    glBegin(GL_QUADS);
+        glColor3ub(118, 215, 196);
+	glVertex2f(0.4f, -0.58);
+	glVertex2f(0.42f, -0.58f);
+	glVertex2f(0.42f, -0.62f);
+	glVertex2f(0.4f, -0.62);
+	glEnd();
+    //chair legs - right back
+    glBegin(GL_QUADS);
+        glColor3ub(118, 215, 196);
+	glVertex2f(0.645f, -0.52f);
+	glVertex2f(0.645f, -0.6f);
+	glVertex2f(0.625f, -0.6f);
+	glVertex2f(0.625f, -0.52);
+	glEnd();
+    //chair legs - left back
+    glBegin(GL_QUADS);
+        glColor3ub(118, 215, 196);
+	glVertex2f(0.6f, -0.58f);
+	glVertex2f(0.6f, -0.65f);
+	glVertex2f(0.58f, -0.65f);
+	glVertex2f(0.58f, -0.58);
+	glEnd();
+
+}
 
 
 
@@ -594,6 +686,7 @@ void day() {
     dayBeach();
     boat1();
     boat2();
+    chair();
     Bigtree();
 	glFlush();  // Render now
 }
