@@ -3,6 +3,24 @@
 #include <GL/glut.h>  // GLUT, include glu.h and gl.h
 #include<math.h>
 # define PI           3.14159265358979323846
+//----dayRiver----
+void dayRiver(){
+	//GL_QUADS
+    glBegin(GL_QUADS);
+        glColor3ub(214, 234, 248);
+    glVertex2f(-1.0f, -0.3f); //down left
+        glColor3ub(36, 113, 163);
+	glVertex2f(-1.0f, 0.2f); //top left
+        glColor3ub(36, 113, 163);
+	glVertex2f(1.0f, 0.2f); //top right
+        glColor3ub(214, 234, 248);
+	glVertex2f(1.0f, -0.08f); //down right
+
+	glEnd();
+}
+
+
+
 void daySky(){
     //GL_QUADS
     glBegin(GL_QUADS);
@@ -477,7 +495,7 @@ void day() {
 
     cloud1();
     cloud2();
-
+    dayRiver();
     dayBeach();
     boat1();
     boat2();
