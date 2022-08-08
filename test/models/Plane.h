@@ -37,6 +37,11 @@ public:
         glPushMatrix();
         glTranslatef(getPlanePosition(), 0.0f, 0.0f);
 
+        this->drawPlaneStructure();
+        this->drawBackStand();
+        this->drawBackRudder();
+        this->drawRightWing();
+
         glPopMatrix();
         glFlush();
     }
@@ -116,6 +121,35 @@ public:
         glVertex2f(-0.045f, 0.66f);
         glVertex2f(-0.13f, 0.66f);
         glVertex2f(-0.135f, 0.67f);
+        glEnd();
+    }
+
+    void drawBackRudder()
+    {
+        glBegin(GL_POLYGON);
+        glColor3ub(255, 133, 102);
+        glVertex2f(-0.12f, 0.83f);
+        glVertex2f(-0.1f, 0.828f);
+        glVertex2f(-0.096f, 0.825f);
+        glVertex2f(-0.086f, 0.820f);
+        glVertex2f(-0.074f, 0.810f);
+        glVertex2f(-0.045f, 0.74f);
+        glVertex2f(-0.043f, 0.720f);
+        glVertex2f(0.01f, 0.72f);
+        glColor3ub(255, 184, 77);
+        glVertex2f(-0.085f, 0.693f);
+        glEnd();
+    }
+
+    void drawRightWing()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(255, 204, 153);
+        glVertex2f(0.05f, 0.55f);
+        glVertex2f(0.0f, 0.55f);
+        glColor3ub(255, 166, 77);
+        glVertex2f(0.1f, 0.62f);
+        glVertex2f(0.2f, 0.62f);
         glEnd();
     }
 };
