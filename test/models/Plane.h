@@ -41,6 +41,8 @@ public:
         this->drawBackStand();
         this->drawBackRudder();
         this->drawRightWing();
+        this->drawLeftWing();
+        this->sideWindowsLeftToRight();
 
         glPopMatrix();
         glFlush();
@@ -150,6 +152,66 @@ public:
         glColor3ub(255, 166, 77);
         glVertex2f(0.1f, 0.62f);
         glVertex2f(0.2f, 0.62f);
+        glEnd();
+    }
+
+    void drawLeftWing()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(255, 204, 153);
+        glVertex2f(-0.05f, 0.55f);
+        glVertex2f(-0.0f, 0.55f);
+        glColor3ub(255, 166, 77);
+        glVertex2f(-0.1f, 0.62f);
+        glVertex2f(-0.2f, 0.62f);
+        glEnd();
+    }
+
+    void drawRightWingTop()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(255, 204, 153);
+        glVertex2f(0.05f, 0.55f);
+        glVertex2f(0.0f, 0.55f);
+        glColor3ub(255, 166, 77);
+        glVertex2f(0.1f, 0.62f);
+        glVertex2f(0.2f, 0.62f);
+        glEnd();
+    }
+
+    void drawLeftWingTop()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(255, 204, 153);
+        glVertex2f(-0.05f, 0.55f);
+        glVertex2f(-0.0f, 0.55f);
+        glColor3ub(255, 166, 77);
+        glVertex2f(-0.1f, 0.62f);
+        glVertex2f(-0.2f, 0.62f);
+        glEnd();
+    }
+
+    void drawDoor()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(173, 173, 133);
+        glVertex2f(-0.01f, 0.68f);
+        glVertex2f(0.0f, 0.68f);
+        glColor3ub(194, 194, 163);
+        glVertex2f(0.0f, 0.64f);
+        glVertex2f(-0.01f, 0.64f);
+        glEnd();
+    }
+
+    void sideWindow1()
+    {
+        glBegin(GL_QUADS);
+        glColor3ub(173, 173, 133);
+        glVertex2f(0.03f, 0.68f);
+        glVertex2f(0.02f, 0.68f);
+        glColor3ub(194, 194, 163);
+        glVertex2f(0.02f, 0.66f);
+        glVertex2f(0.03f, 0.66f);
         glEnd();
     }
 };
