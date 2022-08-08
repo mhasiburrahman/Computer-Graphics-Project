@@ -326,7 +326,18 @@ void cloud2(){
 GLfloat position = 0.0f;
 //GLfloat speed = 0.009f;
 
+void update(int value) {
 
+    if(position <-1.0)
+        position = 1.0f;
+
+    position -= speed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, update, 0);
+}
 void boat1(){
 
     glPushMatrix();
@@ -373,7 +384,18 @@ glPopMatrix();
 
 GLfloat position1 = 0.0f;
 //GLfloat speed = 0.1f;
+void update1(int value) {
 
+    if(position1 <-1.0)
+        position1 = 1.0f;
+
+    position1 -= speed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, update1, 0);
+}
 
 
 void boat2(){
@@ -479,7 +501,9 @@ int main(int argc, char** argv) {
 glutCreateWindow("Day:d , Evening:e ,Night:n ,RainyDay:r ,Start:s ,Stop:a");
 	glutDisplayFunc(day);
 
-
+    glutTimerFunc(100, update, 0);
+    glutTimerFunc(100, update1, 0);
+    //glutTimerFunc(100, update2, 0);
 
 
 

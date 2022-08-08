@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1659901143 source:c:\users\prott\onedrive - american international university-bangladesh\desktop\computer-graphics-project\test\main.cpp
+1659936243 source:c:\users\prott\onedrive - american international university-bangladesh\desktop\computer-graphics-project\test\main.cpp
 	<cstdio>
 	<windows.h>
 	<GL/glut.h>
