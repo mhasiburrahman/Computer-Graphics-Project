@@ -112,6 +112,20 @@ void eveningSky(){
 	glVertex2f(-1.1f, -0.4f);
 	glEnd();
 }
+void rainySky(){
+    //GL_QUADS
+    glBegin(GL_QUADS);
+    glColor3ub(242, 243, 244);
+    glVertex2f(-1.1f, 1.0f);
+        glColor3ub(178, 186, 187); //color mixing
+	glVertex2f(1.1f, 1.0f);
+        glColor3ub(113, 125, 126); //color mixing
+	glVertex2f(1.1f, -0.1f);
+        glColor3ub(97, 106, 107); //color mixing
+	glVertex2f(-1.1f, -0.4f);
+
+	glEnd();
+}
 
 
 void updateCloud1(int value) {
@@ -886,6 +900,7 @@ int main(int argc, char** argv) {
     glutTimerFunc(100, updateCloud2, 0);
     glutTimerFunc(100, updateRain, 0);
     glutTimerFunc(100, updateBellon, 0);
+
 	glutMainLoop();
 	return 0;
 
