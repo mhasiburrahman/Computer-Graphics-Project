@@ -65,7 +65,21 @@ void nightBeach(){
 	glEnd();
 }
 
+//Evening Beach
+void eveningBeach(){
+	//GL_QUADS
+    glBegin(GL_QUADS);
+        glColor3ub(213, 219, 219);
+    glVertex2f(-1.0f, -0.4f); //top left
+        glColor3ub(213, 219, 219);
+    glVertex2f(1.0f, -0.15f); //top right
+        glColor3ub(246, 221, 204);
+	glVertex2f(1.0f, -1.0f); //down right
+        glColor3ub(246, 221, 204);
+	glVertex2f(-1.0f, -1.0f); //down left
 
+	glEnd();
+}
 
 void daySky(){
     //GL_QUADS
