@@ -34,6 +34,19 @@ void nightRiver(){
 
 	glEnd();
 }
+void rainyRiver(){
+    //GL_QUADS
+    glBegin(GL_QUADS);
+	glColor3ub(21, 67, 96);
+
+    glVertex2f(-1.0f, -0.4f);
+	glVertex2f(-1.0f, 0.2f);
+        glColor3ub(153, 163, 164); //color mixing
+	glVertex2f(1.0f, 0.2f);
+	glVertex2f(1.0f, -0.15f);
+
+	glEnd();
+}
 
 //night beach
 
@@ -774,7 +787,7 @@ int main(int argc, char** argv) {
 
     glutTimerFunc(100, updateCloud1, 0);
     glutTimerFunc(100, updateCloud2, 0);
-
+    glutTimerFunc(100, updateRain, 0);
 	glutMainLoop();
 	return 0;
 
