@@ -602,6 +602,103 @@ void Bigtree(){
 
 	glEnd();
 }
+
+GLfloat positionBellon = 0.0f;
+void updateBellon(int value) {
+
+    if(positionBellon >1.0)
+        positionBellon = -1.0f;
+
+    positionBellon += speed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(300, updateBellon, 0);
+}
+void hotBellon(){
+    glPushMatrix();
+     glTranslatef(positionBellon,0.0f, 0.0f);
+
+glColor3ub(205, 92 ,92);
+	int j;
+	GLfloat x=-0.3f; GLfloat y=0.7f; GLfloat radius =.1f;
+	int triangleAmount = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+		glVertex2f(x, y); // center of circle
+		for(j = 0; j <= triangleAmount;j++) {
+			glVertex2f(
+		            x + (radius * cos(j *  twicePi / triangleAmount)),
+			    y + (radius * sin(j * twicePi / triangleAmount))
+			);
+		}
+	glEnd();
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(255 ,255 ,0);
+
+	glVertex2f(-0.35f,  0.35f);
+	glVertex2f(-0.3f, 0.425f);
+	glVertex2f(-0.25f, 0.35f);
+
+	glEnd();
+
+			//GL_QUADS
+    glBegin(GL_QUADS);
+	glColor3ub(139, 69 ,19);
+
+	glVertex2f(-0.35f, 0.3f);
+	glVertex2f(-0.4f, 0.4f);
+	glVertex2f(-0.2f, 0.4f);
+	glVertex2f(-0.25f, 0.3f);
+
+	glEnd();
+
+	    glBegin(GL_TRIANGLES);
+	glColor3ub(205,92,92);
+
+	glVertex2f(-0.4f,  0.675f);
+	glVertex2f(-0.2f, 0.675f);
+	glVertex2f(-0.3f, 0.5f);
+
+	glEnd();
+
+    glBegin(GL_LINES);
+	glColor3ub(139, 69 ,19);
+	glVertex2f(-0.4f, 0.7f);
+	glVertex2f(-0.35f, 0.3f);
+
+	glEnd();
+
+    glBegin(GL_LINES);
+	glColor3ub(139, 69 ,19);
+	glVertex2f(-0.2f, 0.7f);
+	glVertex2f(-0.25f, 0.3f);
+
+	glEnd();
+
+    glBegin(GL_LINES);
+	glColor3ub(139, 69 ,19);
+	glVertex2f(-0.3f, 0.7f);
+	glVertex2f(-0.3f, 0.3f);
+
+	glEnd();
+
+	glPopMatrix();
+
+
+
+   glFlush();
+
+
+}
+
+
+
 void init() {
    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 }
@@ -788,6 +885,7 @@ int main(int argc, char** argv) {
     glutTimerFunc(100, updateCloud1, 0);
     glutTimerFunc(100, updateCloud2, 0);
     glutTimerFunc(100, updateRain, 0);
+    glutTimerFunc(100, updateBellon, 0);
 	glutMainLoop();
 	return 0;
 
