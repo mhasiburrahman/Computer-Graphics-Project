@@ -9,7 +9,7 @@ private:
     void drawPlaneStructure()
     {
         glBegin(GL_POLYGON);
-        glColor3ub(255, 212, 128);
+        glColor3ub(46, 134, 193);
         glVertex2f(0.0f, 0.72f);
         glVertex2f(0.3f, 0.72f);
         glVertex2f(0.31f, 0.715f);
@@ -20,7 +20,7 @@ private:
         glVertex2f(0.37f, 0.66f);
         glVertex2f(0.376f, 0.64f);
         glVertex2f(0.37f, 0.63f);
-        glColor3ub(255, 187, 51);
+        glColor3ub(46, 134, 193);
         glVertex2f(0.3f, 0.605f);
         glVertex2f(0.07f, 0.6f);
         glVertex2f(0.05f, 0.605f);
@@ -39,7 +39,7 @@ private:
         glVertex2f(-0.04f, 0.71f);
         glEnd();
         glBegin(GL_POLYGON);
-        glColor3ub(255, 212, 128);
+        glColor3ub(46, 134, 193);
         glVertex2f(0.0f, 0.72f);
         glVertex2f(0.3f, 0.72f);
         glVertex2f(0.31f, 0.715f);
@@ -50,7 +50,7 @@ private:
         glVertex2f(0.37f, 0.66f);
         glVertex2f(0.376f, 0.64f);
         glVertex2f(0.37f, 0.63f);
-        glColor3ub(255, 187, 51);
+        glColor3ub(46, 134, 193);
         glVertex2f(0.3f, 0.605f);
         glVertex2f(0.07f, 0.6f);
         glVertex2f(0.05f, 0.605f);
@@ -85,6 +85,23 @@ private:
     }
 
     void drawBackRudder()
+    {
+        glBegin(GL_POLYGON);
+        glColor3ub(255, 133, 102);
+        glVertex2f(-0.12f, 0.83f);
+        glVertex2f(-0.1f, 0.828f);
+        glVertex2f(-0.096f, 0.825f);
+        glVertex2f(-0.086f, 0.820f);
+        glVertex2f(-0.074f, 0.810f);
+        glVertex2f(-0.045f, 0.74f);
+        glVertex2f(-0.043f, 0.720f);
+        glVertex2f(0.01f, 0.72f);
+        glColor3ub(255, 184, 77);
+        glVertex2f(-0.085f, 0.693f);
+        glEnd();
+    }
+
+    void drawBackRightWing()
     {
         glBegin(GL_POLYGON);
         glColor3ub(255, 133, 102);
@@ -372,8 +389,9 @@ public:
         this->drawBackStand();
         this->drawBackRudder();
         this->drawRightWing();
-        this->drawLeftWing();
+        this->drawBackRightWing();
         this->drawAllWindows();
+        this->drawFrontWindow();
 
         glPopMatrix();
         glFlush();

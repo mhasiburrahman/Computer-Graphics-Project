@@ -1,5 +1,8 @@
 #include <cstdio>
-// #include <windows.h> // for MS Windows
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 #include <GL/glut.h> // GLUT, include glu.h and gl.h
 #include <math.h>
 #include "models/Plane.h"
