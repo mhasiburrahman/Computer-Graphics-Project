@@ -696,6 +696,94 @@ void chair(){
 }
 
 
+//rain
+
+void rain(){
+     glClearColor(0.8f, 0.8f, 0.8f, 1.0f);
+     glClear(GL_COLOR_BUFFER_BIT);
+    //fornt();
+    rainySky();
+    cloud1();
+    cloud2();
+    rainyRiver();
+
+    //------boat1-------------
+    glBegin(GL_QUADS);
+	glColor3ub(184,134,11);
+
+	glVertex2f(0.2f, -0.1f);
+	glVertex2f(0.0f, -0.1f);
+	glVertex2f(-0.05f, 0.0f);
+	glVertex2f(0.25f, 0.0f);
+	glEnd();
+
+    glBegin(GL_LINES);
+	glColor3ub(139, 69 ,19);
+	glVertex2f(0.1f, 0.0f);
+	glVertex2f(0.1f, 0.2f);
+
+	glEnd();
+
+    glBegin(GL_LINES);
+	glColor3ub(139 ,69 ,19);
+	glVertex2f(0.0f, 0.0f);
+	glVertex2f(0.1f, 0.2f);
+
+	glEnd();
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(205,92,92);
+
+	glVertex2f(0.1f,  0.2f);
+	glVertex2f(0.2f, 0.04f);
+	glVertex2f(0.1f, 0.04f);
+
+	glEnd();
+
+    //----------boat2------------
+
+    glBegin(GL_QUADS);
+	glColor3ub(178, 34, 34);
+
+	glVertex2f(0.15f, 0.15f);
+	glVertex2f(0.45f, 0.15f);
+	glVertex2f(0.4f, 0.05f);
+	glVertex2f(0.2f, 0.05f);
+
+	glEnd();
+
+    glBegin(GL_LINES);
+	glColor3ub(139, 69 ,19);
+	glVertex2f(0.3f, 0.15f);
+	glVertex2f(0.3f, 0.35f);
+
+	glEnd();
+
+    glBegin(GL_LINES);
+	glColor3ub(139 ,69 ,19);
+	glVertex2f(0.3f, 0.35f);
+	glVertex2f(0.15f, 0.15f);
+
+	glEnd();
+
+    glBegin(GL_TRIANGLES);
+	glColor3ub(205,92,92);
+
+	glVertex2f(0.3f, 0.35f);
+	glVertex2f(0.45f, 0.2f);
+	glVertex2f(0.3f, 0.2f);
+
+	glEnd();
+
+    Bigtree();
+
+
+    displayRain();
+
+    chair();
+    glFlush();
+
+}
 
 //---------calling function-----------
 void day() {
@@ -736,6 +824,9 @@ void day() {
     Bigtree();
 	glFlush();  // Render now
 }
+
+
+
 
 
 void handleKeypress(unsigned char key, int x, int y) {
