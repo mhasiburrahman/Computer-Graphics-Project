@@ -7,10 +7,12 @@
 #include <math.h>
 #include "models/Plane.h"
 #include "models/Bird.h"
+#include "models/Boat.h"
 
 #define PI 3.14159265358979323846
 Plane plane;
 Bird bird;
+Boat boat;
 
 //----dayRiver----
 void dayRiver()
@@ -1109,6 +1111,17 @@ void updatePlanePosition(int value)
 
 	glutTimerFunc(100, updatePlanePosition, 0);
 }
+
+void updateBoatPosition(int value)
+{
+
+	if (boat.getPositionBoat() > 1.4)
+		boat.setPositionBoat(-1.0f);
+
+	boat.setPositionBoat(boat.getPositionBoat() + boat.getPositionBoat());
+	glutPostRedisplay();
+	glutTimerFunc(100, updateBoatPosition, 0);
+}
 //---------calling function-----------
 void day()
 {
@@ -1141,6 +1154,7 @@ void day()
 	glEnd();
 	plane.drawPlane();
 	bird.renderBird();
+	boat.renderBoat();
 	cloud1();
 	cloud2();
 	dayRiver();
