@@ -822,7 +822,7 @@ void day()
 	}
 	glEnd();
 	plane.drawPlane();
-
+	bird.renderBird();
 	cloud1();
 	cloud2();
 	dayRiver();
@@ -873,6 +873,19 @@ void animateBird1(int value)
 	glutTimerFunc(100, animateBird1, 0);
 }
 
+void animateBird2(int value)
+{
+
+	if (bird.getPositionBird2() > 1.0)
+		bird.setPositionBird2(-1.0f);
+
+	bird.setPositionBird2(bird.getPositionBird2() + speed);
+
+	glutPostRedisplay();
+
+	glutTimerFunc(100, animateBird2, 0);
+}
+
 /* Main function: GLUT runs as a console application starting at main()  */
 int main(int argc, char **argv)
 {
@@ -896,6 +909,7 @@ int main(int argc, char **argv)
 	// glutTimerFunc(100, updateRain, 0);
 	glutTimerFunc(100, updateBellon, 0);
 	glutTimerFunc(100, animateBird1, 0);
+	glutTimerFunc(100, animateBird2, 0);
 
 	glutMainLoop();
 	return 0;
