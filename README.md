@@ -1,4 +1,4 @@
-# Project title: Sea Beach Scenary
+# Project title: Sea Beach Scenery
 ## Course: Computer Graphics [I]
 
 
@@ -31,6 +31,7 @@
 ---
 
 ## Description:
+This project of Computer Graphics is the manipulation of visual and geometric information using computational techniques. The project focuses on the mathematical and computational foundations of image generation and processing. The project focuses on the computational and mathematical underpinnings of the creation and processing of images. This OpenGL project uses 2D graphics, transformations, color theory, lines, polygons, and other elements.
 
 
 ![day](https://user-images.githubusercontent.com/94465005/183714840-8c21f4c5-a0a6-475e-b8f8-c4a9aa770d40.PNG)
