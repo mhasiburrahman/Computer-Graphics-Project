@@ -860,6 +860,19 @@ void handleKeypress(unsigned char key, int x, int y)
 	}
 }
 
+void animateBird1(int value)
+{
+
+	if (bird.getPositionBird1() > 1.0)
+		bird.setPositionBird1(-1.0f);
+
+	bird.setPositionBird1(bird.getPositionBird1() + speed);
+
+	glutPostRedisplay();
+
+	glutTimerFunc(100, animateBird1, 0);
+}
+
 /* Main function: GLUT runs as a console application starting at main()  */
 int main(int argc, char **argv)
 {
@@ -882,6 +895,7 @@ int main(int argc, char **argv)
 	glutTimerFunc(100, updateCloud2, 0);
 	// glutTimerFunc(100, updateRain, 0);
 	glutTimerFunc(100, updateBellon, 0);
+	glutTimerFunc(100, animateBird1, 0);
 
 	glutMainLoop();
 	return 0;
