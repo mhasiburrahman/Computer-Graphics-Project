@@ -33,4 +33,7 @@
 ## Description:
 
 
-![Capture](https://user-images.githubusercontent.com/94465005/183309389-0d5c3ed9-4b48-4769-a864-71ae0d2b6fd7.PNG)
+![day](https://user-images.githubusercontent.com/94465005/183714840-8c21f4c5-a0a6-475e-b8f8-c4a9aa770d40.PNG)
+![night](https://user-images.githubusercontent.com/94465005/183714878-f5504d00-89af-4508-8657-2c03f8c56a80.PNG)
+![evening](https://user-images.githubusercontent.com/94465005/183714888-ff9a22af-325e-44be-ae07-2abb4709a7bb.PNG)
+
