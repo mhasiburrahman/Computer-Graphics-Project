@@ -6,9 +6,11 @@
 #include <GL/glut.h> // GLUT, include glu.h and gl.h
 #include <math.h>
 #include "models/Plane.h"
+#include "models/Bird.h"
 
 #define PI 3.14159265358979323846
 Plane plane;
+Bird bird;
 
 //----dayRiver----
 void dayRiver()
@@ -820,6 +822,7 @@ void day()
 	}
 	glEnd();
 	plane.drawPlane();
+
 	cloud1();
 	cloud2();
 	dayRiver();
@@ -877,7 +880,7 @@ int main(int argc, char **argv)
 
 	glutTimerFunc(100, updateCloud1, 0);
 	glutTimerFunc(100, updateCloud2, 0);
-	glutTimerFunc(100, updateRain, 0);
+	// glutTimerFunc(100, updateRain, 0);
 	glutTimerFunc(100, updateBellon, 0);
 
 	glutMainLoop();
